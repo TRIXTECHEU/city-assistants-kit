@@ -157,6 +157,7 @@
   background: var(--btn-start-bg) !important;
   transition: var(--btn-start-transition) !important;
   border: var(--btn-border-width) solid var(--btn-start-border) !important;
+  color: var(--btn-start-text-color) !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat)::before {
@@ -185,6 +186,12 @@
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover {
   background: var(--btn-start-bg-hover) !important;
+  border: var(--btn-border-width) solid var(--btn-start-border-hover) !important;
+  color: var(--btn-start-text-color-hover) !important;
+}
+
+:is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover::before {
+  color: var(--btn-start-text-color-hover) !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover::after {
@@ -586,6 +593,7 @@ div[class*="vfrc-card"] button:hover,
 div[class*="vfrc-card"] .vfrc-button:hover {
   background: var(--card-btn-bg-hover) !important;
   border: var(--card-btn-border-hover) !important;
+  color: var(--card-btn-text-color-hover) !important;
 }
 
 /* 10.8) Card button shine effect */
@@ -1154,7 +1162,8 @@ button[class*="privacy__primary-button"] {
 /* 16.5.3) Primary button hover state */
 button[class*="privacy__primary-button"]:hover {
   background: var(--privacy-pri-bg-hover) !important;
-  border: var(--privacy-pri-border) !important;
+  border: var(--privacy-pri-border-hover) !important;
+  color: var(--privacy-pri-text-hover) !important;
 }
 
 /* 16.5.4) Primary button shine effect */
