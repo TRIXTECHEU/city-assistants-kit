@@ -662,7 +662,6 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"] {
   border-radius: var(--carousel-btn-radius) !important;
   background-color: var(--carousel-btn-bg) !important;
   border: var(--carousel-btn-border) !important;
-  color: var(--carousel-btn-color) !important;
   box-shadow: var(--carousel-btn-shadow) !important;
   position: absolute !important;
   z-index: var(--carousel-btn-z-index) !important;
@@ -724,8 +723,8 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"][disabled] {
 div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"]:not(:disabled):hover {
   background-color: var(--carousel-btn-bg-hover) !important;
   border: var(--carousel-btn-border-hover) !important;
-  color: var(--carousel-btn-color-hover) !important;
   transform: scale(var(--carousel-btn-scale-hover)) !important;
+  background-image: var(--carousel-icon-url-hover) !important;
   cursor: pointer !important;
 }
 
