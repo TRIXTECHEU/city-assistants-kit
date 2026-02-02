@@ -506,7 +506,7 @@ button.vfrc-button.has-custom-icon {
 
 /* 10) CAROUSEL */
 /* 10.1) Card container */
-div[class*="vfrc-card"] {
+div[class*="vfrc-card"]:not([class*="vfrc-card--header"]):not([class*="vfrc-card--description"]) {
   background-color: var(--card-bg-color) !important;
   border-radius: var(--card-radius) !important;
   border: var(--card-border) !important;
