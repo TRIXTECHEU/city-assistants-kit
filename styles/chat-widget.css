@@ -1,4 +1,4 @@
-/* TrixTech s.r.o. @2025 */
+/* TrixTech s.r.o. @2026 */
 
 /* 0) LAYERING */
 /* 0.1) Keep the chat widget above all page content */
@@ -122,7 +122,7 @@
 
 
 /* 3) SYSTEM BUTTONS (START NEW CHAT / CANCEL) */
-/* 3.1) Modification of the START NEW CHAT and CANCEL buttons*/
+/* 3.1) Shared properties (reset and shape) */
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat, button.vfrc-button[label="Cancel"]) {
   position: relative !important;
   display: inline-flex !important;
@@ -131,8 +131,14 @@
   border-radius: var(--btn-radius) !important;
   padding: var(--btn-padding) !important;
   line-height: 1 !important;
+  font-family: var(--_1bof89na) !important;
+  font-weight: var(--btn-font-weight) !important;
+  font-size: var(--btn-font-size) !important;
+  letter-spacing: var(--btn-letter-spacing) !important;
   color: transparent !important;
   overflow: hidden !important;
+  cursor: pointer !important;
+  transition: all 0.2s ease !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat, button.vfrc-button[label="Cancel"]) span {
@@ -144,20 +150,15 @@
   top: 50% !important;
   left: 50% !important;
   transform: translate(-50%, -50%) !important;
-  font-family: inherit !important;
-  font-weight: var(--btn-font-weight) !important;
-  font-size: var(--btn-font-size) !important;
-  letter-spacing: var(--btn-letter-spacing) !important;
   white-space: nowrap !important;
   pointer-events: none !important;
 }
 
-/* 3.2) Modification of the START NEW CHAT button header */
+/* 3.2) Start new chat button */
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat) {
   background: var(--btn-start-bg) !important;
-  transition: var(--btn-start-transition) !important;
   border: var(--btn-border-width) solid var(--btn-start-border) !important;
-  color: var(--btn-start-text-color) !important;
+  transition: var(--btn-start-transition) !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat)::before {
@@ -171,23 +172,16 @@
   position: absolute !important;
   top: 0; left: -35%;
   width: 70%; height: 100%;
-  background: linear-gradient(115deg,
-              rgba(255,255,255,0) 0%,
-              rgba(255,255,255,.32) 50%,
-              rgba(255,255,255,0) 100%);
+  background: linear-gradient(115deg, rgba(255,255,255,0) 0%, rgba(255,255,255,.32) 50%, rgba(255,255,255,0) 100%);
   transform: translateX(260%) skewX(-24deg);
   opacity: 0;
-  transition:
-    transform .95s cubic-bezier(.22,.61,.36,1),
-    opacity   1ms linear .96s !important;
+  transition: transform .95s cubic-bezier(.22,.61,.36,1), opacity 1ms linear .96s !important;
   pointer-events: none !important;
-  will-change: transform, opacity;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover {
   background: var(--btn-start-bg-hover) !important;
-  border: var(--btn-border-width) solid var(--btn-start-border-hover) !important;
-  color: var(--btn-start-text-color-hover) !important;
+  border-color: var(--btn-start-border-hover) !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover::before {
@@ -197,9 +191,7 @@
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):hover::after {
   transform: translateX(-260%) skewX(-24deg);
   opacity: 1;
-  transition:
-    transform .95s cubic-bezier(.22,.61,.36,1),
-    opacity   120ms ease 0s !important;
+  transition: transform .95s cubic-bezier(.22,.61,.36,1), opacity 120ms ease 0s !important;
 }
 
 :is(button.vfrc-button[label="Start new chat"], #vfrc-start-chat):focus-visible {
@@ -207,7 +199,7 @@
   box-shadow: 0 0 0 3px var(--btn-focus-shadow) !important;
 }
 
-/* 3.3) Modification of the CANCEL button header */
+/* 3.3) Cancel button */
 button.vfrc-button[label="Cancel"] {
   background: var(--btn-cancel-bg) !important;
   border: var(--btn-cancel-border-width) solid var(--btn-cancel-border) !important;
@@ -220,6 +212,16 @@ button.vfrc-button[label="Cancel"]::before {
 
 button.vfrc-button[label="Cancel"]:hover {
   background: var(--btn-cancel-bg-hover) !important;
+  border-color: var(--btn-cancel-border-hover) !important;
+}
+
+button.vfrc-button[label="Cancel"]:hover::before {
+  color: var(--btn-cancel-text-color-hover) !important;
+}
+
+button.vfrc-button[label="Cancel"]:focus-visible {
+  outline: none !important;
+  box-shadow: 0 0 0 3px var(--btn-focus-shadow) !important;
 }
 
 
@@ -660,6 +662,7 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"] {
   border-radius: var(--carousel-btn-radius) !important;
   background-color: var(--carousel-btn-bg) !important;
   border: var(--carousel-btn-border) !important;
+  color: var(--carousel-btn-color) !important;
   box-shadow: var(--carousel-btn-shadow) !important;
   position: absolute !important;
   z-index: var(--carousel-btn-z-index) !important;
@@ -722,6 +725,8 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"][disabled] {
 /* 10.17) Carousel button hover */
 div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"]:not(:disabled):hover {
   background-color: var(--carousel-btn-bg-hover) !important;
+  border: var(--carousel-btn-border-hover) !important;
+  color: var(--carousel-btn-color-hover) !important;
   transform: scale(var(--carousel-btn-scale-hover)) !important;
   cursor: pointer !important;
 }
@@ -751,9 +756,22 @@ div[class*="system-response"] div:has(> .vfrc-icon:not(.vfrc-carousel--button .v
   gap: var(--ai-label-gap) !important;
 }
 
-/* 11.3) Text styling */
+/* 11.3) Text styling (content and typography from config) */
 div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) + span {
+  position: relative !important;
   display: inline-block !important;
+  font-size: 0 !important;
+  color: transparent !important;
+  line-height: 0 !important;
+  overflow: hidden !important;
+}
+
+div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) + span::before {
+  content: var(--ai-badge-text) !important;
+  display: inline-block !important;
+  font-size: var(--ai-text-size) !important;
+  line-height: var(--ai-text-line-height) !important;
+  letter-spacing: var(--ai-text-letter-spacing) !important;
   color: var(--ai-text-color) !important;
   font-weight: var(--ai-text-weight) !important;
 }
