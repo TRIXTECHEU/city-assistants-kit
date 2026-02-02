@@ -695,8 +695,6 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"] svg g {
 
 /* 10.14) Carousel button icon */
 div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"] svg {
-  width: 100% !important;
-  height: 100% !important;
   background-image: var(--carousel-icon-url) !important;
   background-repeat: no-repeat !important;
   background-position: center center !important;
