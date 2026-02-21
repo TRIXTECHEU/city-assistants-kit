@@ -651,6 +651,7 @@ div[class*="vfrc-card"] .vfrc-button::before {
 div[class*="vfrc-card"] button:hover::before,
 div[class*="vfrc-card"] .vfrc-button:hover::before {
   transform: translateX(var(--card-btn-icon-move)) !important;
+  background-image: var(--card-btn-icon-url-hover) !important;
 }
 
 /* 10.11) Carousel navigation button */
