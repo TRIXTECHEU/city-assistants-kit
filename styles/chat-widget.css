@@ -732,19 +732,19 @@ div[class*="vfrc-carousel"] button[class*="vfrc-carousel--button"]:not(:disabled
 
 /* 11) AI BADGE SETTINGS */
 /* 11.1) Icon styling */
-div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) {
+div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon):not(div[link] .vfrc-icon) {
   display: inline-block !important;
   width: var(--ai-icon-width) !important;
   height: var(--ai-icon-height) !important;
   background: var(--ai-icon-image) center / contain no-repeat !important;
 }
 
-div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) svg {
+div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon):not(div[link] .vfrc-icon) svg {
   display: none !important;
 }
 
 /* 11.2) Container styling */
-div[class*="system-response"] div:has(> .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon)) {
+div[class*="system-response"] div:has(> .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon):not(div[link] .vfrc-icon)) {
   display: flex !important;
   align-items: center !important;
   justify-content: flex-start !important;
@@ -755,7 +755,7 @@ div[class*="system-response"] div:has(> .vfrc-icon:not(.vfrc-carousel--button .v
 }
 
 /* 11.3) Text styling (content and typography from config) */
-div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) + span {
+div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon):not(div[link] .vfrc-icon) + span {
   position: relative !important;
   display: inline-block !important;
   font-size: 0 !important;
@@ -764,7 +764,7 @@ div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) 
   overflow: hidden !important;
 }
 
-div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon) + span::before {
+div[class*="system-response"] .vfrc-icon:not(.vfrc-carousel--button .vfrc-icon):not(div[link] .vfrc-icon) + span::before {
   content: var(--ai-badge-text) !important;
   display: inline-block !important;
   font-size: var(--ai-text-size) !important;
