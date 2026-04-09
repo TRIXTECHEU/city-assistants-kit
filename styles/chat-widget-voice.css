@@ -971,6 +971,7 @@ button.vfrc-chat-input__mute-microphone {
   position: relative !important;
   display: inline-block !important;
   min-width: 80px !important;
+  transform: var(--voice-input-transform) !important;
 }
 
 .vfrc-chat-input__container-inner [data-vf-state]::before {
